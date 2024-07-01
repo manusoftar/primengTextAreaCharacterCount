@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NgControl, NgModel } from '@angular/forms';
 import { InputTextarea } from 'primeng/inputtextarea';
 
