@@ -1,11 +1,11 @@
-import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { NgControl, NgModel } from '@angular/forms';
 import { InputTextarea } from 'primeng/inputtextarea';
 
 @Directive({
   selector: '[appCharacterCount]'
 })
-export class CharacterCountDirective extends InputTextarea implements AfterViewInit {
+export class CharacterCountDirective extends InputTextarea implements OnInit {
   maxLength: number;
   showCounter = false;
   counter: HTMLElement;
@@ -16,7 +16,7 @@ export class CharacterCountDirective extends InputTextarea implements AfterViewI
     this.maxLength = el.nativeElement.maxLength;
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     if (this.maxLength < 0) {
       return;
     }
