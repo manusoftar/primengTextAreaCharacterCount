@@ -1,0 +1,13 @@
+.text-area-char-counter {
+  color: grey;
+  font-weight: 600;
+  position: absolute;
+  font-size: 10px;
+  bottom: 5px;
+  right: 15px;
+}
+
+.text-area-counter-wrapper {
+  position: relative;
+  display: inline-block;
+}
