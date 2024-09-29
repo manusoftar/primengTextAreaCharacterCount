@@ -20,16 +20,17 @@ export class CharacterCountDirective extends InputTextarea implements OnInit {
     if (this.maxLength < 0) {
       return;
     }
+    // Create the container and put it after the textarea
     this.counter = this.renderer.createElement('span');
     this.renderer.addClass(this.counter, 'text-area-char-counter');
 
-    this.wrapper = this.renderer.createElement('div');
-    this.renderer.addClass(this.wrapper, 'text-area-counter-wrapper');
-
+    // Insert the container after the textarea without wrapping it
     const parent = this.el.nativeElement.parentNode;
-    this.renderer.appendChild(this.wrapper, this.el.nativeElement);
-    this.renderer.appendChild(this.wrapper, this.counter);
-    this.renderer.appendChild(parent, this.wrapper);
+    this.renderer.insertBefore(
+      parent,
+      this.counter,
+      this.el.nativeElement.nextSibling
+    );
   }
 
   onFocus(e: any): void {
